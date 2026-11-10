@@ -1,4 +1,4 @@
-const DATA_VERSION = '1792854859714'; // bumped for real-time mobile sync
+const DATA_VERSION = '1793805000000'; // updated with multi-color palettes and clear swatch support
 
 /**
  * Vision Thread (@vision_thread00) - Product Catalog
@@ -55,8 +55,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792854163946_WhatsApp_Image_2026-10-20_at_2_40_04_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Classic White & Gold",
+      "Pastel Pink",
+      "Radiant Yellow",
+      "Festive Red",
+      "Mango Orange",
+      "Pista Green"
     ],
     "materials": "",
     "dimensions": "",
@@ -84,8 +88,13 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792854047219_WhatsApp_Image_2026-10-20_at_2_39_56_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Blush Pink",
+      "Pure White",
+      "Lavender Purple",
+      "Sunshine Yellow",
+      "Sky Blue",
+      "Rose Red",
+      "Pastel Mix"
     ],
     "materials": "",
     "dimensions": "",
@@ -113,8 +122,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853958325_WhatsApp_Image_2026-10-20_at_2_39_59_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Sunshine Yellow",
+      "Blush Pink",
+      "Pure White",
+      "Sky Blue",
+      "Lavender",
+      "Mint Green"
     ],
     "materials": "",
     "dimensions": "",
@@ -142,8 +155,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853855469_WhatsApp_Image_2026-10-20_at_2_40_07_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Pink & Lilac",
+      "Blush Pink",
+      "Pure White",
+      "Lavender Purple",
+      "Sky Blue",
+      "Sunset Peach"
     ],
     "materials": "",
     "dimensions": "",
@@ -171,8 +188,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853629788_WhatsApp_Image_2026-10-20_at_2_40_01_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Pastel Multi-Flower",
+      "Blush Pink",
+      "Pure White",
+      "Lavender Purple",
+      "Sunshine Yellow",
+      "Rose Red"
     ],
     "materials": "",
     "dimensions": "",
@@ -200,8 +221,11 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853525115_WhatsApp_Image_2026-10-20_at_2_40_13_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Pastel Pink & White",
+      "Classic White & Gold",
+      "Lavender Purple",
+      "Royal Blue & White",
+      "Sage Green"
     ],
     "materials": "",
     "dimensions": "",
@@ -229,8 +253,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853260093_WhatsApp_Image_2026-10-20_at_2_40_11_PM__1_.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Crimson Red",
+      "Lotus Pink",
+      "Pure White",
+      "Sunshine Yellow",
+      "Marigold Orange",
+      "Royal Purple"
     ],
     "materials": "",
     "dimensions": "",
@@ -258,8 +286,11 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792853147217_WhatsApp_Image_2026-10-20_at_2_40_15_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Festive Multi-Color",
+      "Marigold Yellow & Orange",
+      "Rose Pink & White",
+      "Festive Red & Gold",
+      "Royal Peacock (Blue & Green)"
     ],
     "materials": "",
     "dimensions": "",
@@ -287,8 +318,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792595588943_WhatsApp_Image_2026-10-20_at_2_40_07_PM__2_.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Blush Pink",
+      "Pearl White",
+      "Lilac Purple",
+      "Sky Blue",
+      "Mint Green",
+      "Buttercup Yellow"
     ],
     "materials": "",
     "dimensions": "",
@@ -316,8 +351,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792594686194_WhatsApp_Image_2026-10-20_at_2_40_02_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Classic White & Yellow",
+      "Blush Pink",
+      "Pure White",
+      "Sunshine Yellow",
+      "Sky Blue",
+      "Lavender"
     ],
     "materials": "",
     "dimensions": "",
@@ -345,8 +384,11 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792593114329_WhatsApp_Image_2026-10-20_at_2_40_09_PM.jpeg"
     ],
     "colors": [
-      "Pink",
-      "White"
+      "Festive Red",
+      "Sunshine Yellow",
+      "Marigold Orange",
+      "Rose Pink & White",
+      "Velvet Red"
     ],
     "materials": "",
     "dimensions": "",
@@ -374,9 +416,11 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1791566944633_WhatsApp_Image_2026-08-15_at_12_28_43_PM__2_.jpeg"
     ],
     "colors": [
+      "Sunflower Yellow",
       "Pink & Lilac",
       "Blush Pink",
-      "Pure Purple",
+      "Pure White",
+      "Sky Blue",
       "Pastel Mix"
     ],
     "materials": "High density velvet pipe cleaners, floral wire stem",
@@ -404,7 +448,14 @@ const DEFAULT_PRODUCTS = [
     "gallery": [
       "/uploads/prod_1792489207816_WhatsApp_Image_2026-10-20_at_2_39_54_PM.jpeg"
     ],
-    "colors": [],
+    "colors": [
+      "Blush Pink",
+      "Sunshine Yellow",
+      "Pure White",
+      "Lavender Purple",
+      "Rose Red",
+      "Sky Blue"
+    ],
     "materials": "Chenille craft stem, floral tape, cellophane wrap",
     "dimensions": "Height: 28cm, Width: 12cm",
     "customizable": true,
@@ -431,8 +482,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792489385502_WhatsApp_Image_2026-10-20_at_2_40_17_PM.jpeg"
     ],
     "colors": [
+      "Lotus Pink",
+      "Pure White",
       "Classic White & Yellow",
-      "Blush Pink & Peach"
+      "Blush Pink & Peach",
+      "Crimson Red",
+      "Lavender"
     ],
     "materials": "Craft foam & chenille petal blend",
     "dimensions": "Diameter: 6.5cm",
@@ -461,7 +516,10 @@ const DEFAULT_PRODUCTS = [
     ],
     "colors": [
       "Marigold Orange & Red",
-      "Rose Pink & White"
+      "Rose Pink & White",
+      "Festive Red & Gold",
+      "Sunshine Yellow",
+      "Royal Peacock (Blue & Green)"
     ],
     "materials": "Premium chenille pipe cleaners, golden spacer beads/ all available in all colours",
     "dimensions": "Length: 45cm (adjustable)",
@@ -491,7 +549,10 @@ const DEFAULT_PRODUCTS = [
     "colors": [
       "Dusty Rose Pink",
       "Mint Green",
-      "Lilac Dream"
+      "Lilac Dream",
+      "Festive Red & Gold",
+      "Pure White",
+      "Sunshine Yellow"
     ],
     "materials": "Seamless stretch elastic band, chenille floral accent",
     "dimensions": "Diameter: 8cm",
@@ -521,7 +582,10 @@ const DEFAULT_PRODUCTS = [
     "colors": [
       "Blush Pink Blossom",
       "Sky Blue Daisy",
-      "Vintage Mauve"
+      "Vintage Mauve",
+      "Pearl White",
+      "Lavender",
+      "Buttercup Yellow"
     ],
     "materials": "Gold-finish alloy clip, grosgrain ribbon",
     "dimensions": "Length: 6cm, Width: 3.5cm",
@@ -550,7 +614,11 @@ const DEFAULT_PRODUCTS = [
     ],
     "colors": [
       "Pastel Multi-Flower",
-      "Princess Pink & Pearls"
+      "Princess Pink & Pearls",
+      "Lavender Purple",
+      "Sky Blue",
+      "Buttercup Yellow",
+      "Pure White"
     ],
     "materials": "Flexible resin headband, satin wrap",
     "dimensions": "One size fits all (flexible)",
@@ -578,8 +646,12 @@ const DEFAULT_PRODUCTS = [
       "/uploads/prod_1792490324018_WhatsApp_Image_2026-10-20_at_2_40_07_PM__1_.jpeg"
     ],
     "colors": [
+      "Crimson Red",
+      "Lotus Pink",
+      "Pure White",
       "Royal Peacock (Blue & Green)",
-      "Rose Gold Peacock"
+      "Rose Gold Peacock",
+      "Sunshine Yellow"
     ],
     "materials": "Metallic craft thread, chenille wire, brass keyring",
     "dimensions": "Length: 11cm including chain",
@@ -608,7 +680,10 @@ const DEFAULT_PRODUCTS = [
     ],
     "colors": [
       "Marigold Yellow & Orange",
-      "Festive Red & Gold"
+      "Festive Red & Gold",
+      "Rose Pink & White",
+      "Royal Peacock (Blue & Green)",
+      "Pastel Mix"
     ],
     "materials": "Hand-shaped chenille floral accents, golden gota patti",
     "dimensions": "Standard 3-foot doorway width (90cm)",
@@ -638,7 +713,10 @@ const DEFAULT_PRODUCTS = [
     "colors": [
       "Pastel Pink Blossom",
       "Royal Lavender",
-      "Golden Sunflower"
+      "Golden Sunflower",
+      "Sky Blue",
+      "Pure White",
+      "Mint Green"
     ],
     "materials": "Rigid kraft gift box, shredded wood bedding, satin ribbon",
     "dimensions": "Box: 25cm x 20cm x 10cm",
@@ -648,6 +726,154 @@ const DEFAULT_PRODUCTS = [
     "updatedAt": "2026-10-24T14:44:33.000Z"
   }
 ];
+
+// ============================================================================
+// Multi-Color Palettes & Swatch Rendering Support
+// ============================================================================
+window.VT_COLOR_PALETTES = {
+  // Solid craft tones
+  'Pink': '#ec4899',
+  'Pastel Pink': '#f9a8d4',
+  'Blush Pink': '#f472b6',
+  'Rose Pink': '#fb7185',
+  'Lotus Pink': '#f43f5e',
+  'Dusty Rose Pink': '#e091a3',
+  'Pastel Pink Blossom': '#f472b6',
+  'Princess Pink': '#f472b6',
+  'White': '#ffffff',
+  'Pure White': '#ffffff',
+  'Pearl White': '#f8fafc',
+  'Classic White': '#ffffff',
+  'Yellow': '#eab308',
+  'Sunshine Yellow': '#facc15',
+  'Golden Yellow': '#f59e0b',
+  'Sunflower Yellow': '#fbbf24',
+  'Buttercup Yellow': '#fde047',
+  'Radiant Yellow': '#facc15',
+  'Golden Sunflower': '#f59e0b',
+  'Lavender': '#a855f7',
+  'Lavender Purple': '#a855f7',
+  'Royal Lavender': '#8b5cf6',
+  'Lilac': '#c084fc',
+  'Lilac Purple': '#c084fc',
+  'Lilac Dream': '#d8b4fe',
+  'Pure Purple': '#9333ea',
+  'Royal Purple': '#9333ea',
+  'Red': '#ef4444',
+  'Rose Red': '#e11d48',
+  'Crimson Red': '#dc2626',
+  'Festive Red': '#dc2626',
+  'Velvet Red': '#991b1b',
+  'Blue': '#3b82f6',
+  'Sky Blue': '#38bdf8',
+  'Baby Blue': '#7dd3fc',
+  'Sky Blue Daisy': '#38bdf8',
+  'Green': '#22c55e',
+  'Mint Green': '#4ade80',
+  'Pista Green': '#86efac',
+  'Sage Green': '#6ee7b7',
+  'Orange': '#f97316',
+  'Marigold Orange': '#ea580c',
+  'Mango Orange': '#f59e0b',
+  'Sunset Peach': '#fb923c',
+  'Peach': '#fb923c',
+  'Peach Blossom': '#fda4af',
+  'Coral': '#fb7185',
+  'Coral Peach': '#f87171',
+  'Vintage Mauve': '#9d7482',
+
+  // Dual-tone combinations & gradients
+  'Pink & Lilac': 'linear-gradient(135deg, #f472b6 50%, #c084fc 50%)',
+  'Classic White & Yellow': 'linear-gradient(135deg, #ffffff 50%, #facc15 50%)',
+  'Blush Pink & Peach': 'linear-gradient(135deg, #f472b6 50%, #fb923c 50%)',
+  'Marigold Orange & Red': 'linear-gradient(135deg, #ea580c 50%, #dc2626 50%)',
+  'Rose Pink & White': 'linear-gradient(135deg, #fb7185 50%, #ffffff 50%)',
+  'Pastel Multi-Flower': 'linear-gradient(135deg, #f472b6 33%, #fbbf24 66%, #a855f7 100%)',
+  'Princess Pink & Pearls': 'linear-gradient(135deg, #f472b6 50%, #f8fafc 50%)',
+  'Royal Peacock (Blue & Green)': 'linear-gradient(135deg, #0284c7 50%, #059669 50%)',
+  'Rose Gold Peacock': 'linear-gradient(135deg, #e0a96d 50%, #f43f5e 50%)',
+  'Marigold Yellow & Orange': 'linear-gradient(135deg, #facc15 50%, #ea580c 50%)',
+  'Festive Red & Gold': 'linear-gradient(135deg, #dc2626 50%, #f59e0b 50%)',
+  'Pastel Mix': 'linear-gradient(135deg, #f9a8d4 33%, #fde047 66%, #7dd3fc 100%)',
+  'Classic White & Gold': 'linear-gradient(135deg, #ffffff 50%, #f59e0b 50%)',
+  'Festive Multi-Color': 'linear-gradient(135deg, #ef4444 25%, #f59e0b 50%, #10b981 75%, #3b82f6 100%)',
+  'Pastel Pink & White': 'linear-gradient(135deg, #f472b6 50%, #ffffff 50%)',
+  'Royal Blue & White': 'linear-gradient(135deg, #2563eb 50%, #ffffff 50%)',
+  'Standard': '#ec4899'
+};
+
+window.getColorSwatchStyle = function(colorName) {
+  if (!colorName) return 'background-color: #ec4899;';
+  const trimmed = String(colorName).trim();
+  const map = window.VT_COLOR_PALETTES || {};
+  if (map[trimmed]) {
+    const val = map[trimmed];
+    return val.startsWith('linear-gradient') ? `background: ${val};` : `background-color: ${val};`;
+  }
+  const lower = trimmed.toLowerCase();
+  if (lower.includes('&') || lower.includes('and')) {
+    const parts = lower.split(/&|and/).map(s => s.trim());
+    const c1 = window.getColorSwatchStyle(parts[0]).replace(/^background(-color)?:\s*|;$/g, '');
+    const c2 = window.getColorSwatchStyle(parts[1]).replace(/^background(-color)?:\s*|;$/g, '');
+    return `background: linear-gradient(135deg, ${c1} 50%, ${c2} 50%);`;
+  }
+  if (lower.includes('pink') || lower.includes('rose') || lower.includes('blush')) return 'background-color: #f472b6;';
+  if (lower.includes('white') || lower.includes('pearl')) return 'background-color: #ffffff;';
+  if (lower.includes('yellow') || lower.includes('sunflower') || lower.includes('gold')) return 'background-color: #facc15;';
+  if (lower.includes('lavender') || lower.includes('purple') || lower.includes('lilac') || lower.includes('mauve')) return 'background-color: #c084fc;';
+  if (lower.includes('red') || lower.includes('crimson') || lower.includes('maroon') || lower.includes('ruby')) return 'background-color: #ef4444;';
+  if (lower.includes('blue') || lower.includes('sky')) return 'background-color: #38bdf8;';
+  if (lower.includes('green') || lower.includes('mint') || lower.includes('pista') || lower.includes('sage')) return 'background-color: #4ade80;';
+  if (lower.includes('orange') || lower.includes('marigold') || lower.includes('peach') || lower.includes('coral') || lower.includes('mango')) return 'background-color: #fb923c;';
+  return 'background-color: #ec4899;';
+};
+
+window.isLightColor = function(colorName) {
+  if (!colorName) return false;
+  const lower = String(colorName).toLowerCase();
+  return lower.includes('white') || lower.includes('pearl') || lower.includes('yellow') || lower.includes('cream');
+};
+
+// Rich curated color fallbacks by category
+window.VT_CATEGORY_DEFAULT_COLORS = {
+  'Bouquets': ['Blush Pink', 'Pure White', 'Lavender Purple', 'Sunshine Yellow', 'Sky Blue', 'Rose Red', 'Pastel Mix'],
+  'Keychains': ['Sunshine Yellow', 'Blush Pink', 'Pure White', 'Lavender', 'Sky Blue', 'Mint Green'],
+  'Festive Crafts': ['Festive Red', 'Sunshine Yellow', 'Marigold Orange', 'Rose Pink & White', 'Classic White & Gold', 'Pastel Pink'],
+  'Hair Accessories': ['Blush Pink', 'Pearl White', 'Lilac Purple', 'Sky Blue', 'Mint Green', 'Buttercup Yellow'],
+  'Handmade Flowers': ['Lotus Pink', 'Pure White', 'Crimson Red', 'Sunshine Yellow', 'Lavender', 'Blush Pink & Peach'],
+  'Home Decor': ['Festive Multi-Color', 'Marigold Yellow & Orange', 'Rose Pink & White', 'Festive Red & Gold', 'Royal Peacock (Blue & Green)'],
+  'Gifts & Hampers': ['Pastel Pink Blossom', 'Royal Lavender', 'Golden Sunflower', 'Sky Blue', 'Pure White', 'Mint Green'],
+  'Other Crafts': ['Pastel Pink & White', 'Classic White & Gold', 'Lavender Purple', 'Royal Blue & White', 'Sage Green'],
+  'default': ['Blush Pink', 'Pure White', 'Lavender Purple', 'Sunshine Yellow', 'Sky Blue', 'Mint Green', 'Rose Red']
+};
+
+window.getNormalizedProductColors = function(product) {
+  if (!product) return window.VT_CATEGORY_DEFAULT_COLORS['default'];
+  
+  // If product matches one of the bundled default products, always respect its multiple colors
+  if (typeof DEFAULT_PRODUCTS !== 'undefined' && Array.isArray(DEFAULT_PRODUCTS)) {
+    const defaultMatch = DEFAULT_PRODUCTS.find(dp => dp.id === product.id || dp.productCode === product.id);
+    if (defaultMatch && Array.isArray(defaultMatch.colors) && defaultMatch.colors.length >= 3) {
+      return defaultMatch.colors;
+    }
+  }
+
+  const rawColors = Array.isArray(product.colors) ? product.colors.filter(Boolean) : [];
+  
+  // If already has 3 or more distinct options and isn't the old legacy ['Pink', 'White'] dummy pair
+  const isLegacyTwoColor = rawColors.length === 2 && rawColors.includes('Pink') && rawColors.includes('White');
+  if (rawColors.length >= 3 && !isLegacyTwoColor) {
+    return rawColors;
+  }
+
+  const cat = product.category || 'default';
+  const catDefaults = (window.VT_CATEGORY_DEFAULT_COLORS && window.VT_CATEGORY_DEFAULT_COLORS[cat]) 
+    ? window.VT_CATEGORY_DEFAULT_COLORS[cat] 
+    : window.VT_CATEGORY_DEFAULT_COLORS['default'];
+  
+  const merged = Array.from(new Set([...rawColors, ...catDefaults]));
+  return merged.length >= 4 ? merged : catDefaults;
+};
 
 window.getVtApiBase = function() {
   if (typeof window === 'undefined' || !window.location) return 'http://localhost:5000/api';
@@ -685,7 +911,10 @@ class ProductStore {
       try {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed) && parsed.length >= DEFAULT_PRODUCTS.length) {
-          this.products = parsed;
+          this.products = parsed.map(p => ({
+            ...p,
+            colors: window.getNormalizedProductColors(p)
+          }));
         } else {
           this.products = [...DEFAULT_PRODUCTS];
           this.save();
@@ -740,6 +969,11 @@ class ProductStore {
 
       const data = await res.json();
       if (data.success && Array.isArray(data.products)) {
+        // Enforce multiple colors normalization on all products
+        data.products.forEach(p => {
+          p.colors = window.getNormalizedProductColors(p);
+        });
+
         const incomingVersion = data.catalogVersion || this.catalogVersion || `v${data.products.length}`;
         const changed = this.hasCatalogChanged(this.products, data.products);
 
@@ -801,17 +1035,32 @@ class ProductStore {
   }
 
   getAll() {
-    return [...this.products];
+    return this.products.map(p => ({
+      ...p,
+      colors: window.getNormalizedProductColors(p)
+    }));
   }
 
   getById(id) {
     if (!id) return null;
-    return this.products.find(p => p.id === id || p.productCode === id || (p.dbId && String(p.dbId) === String(id))) || null;
+    const p = this.products.find(p => p.id === id || p.productCode === id || (p.dbId && String(p.dbId) === String(id))) || null;
+    if (p) {
+      return {
+        ...p,
+        colors: window.getNormalizedProductColors(p)
+      };
+    }
+    return null;
   }
 
   getByCategory(cat) {
     if (!cat || cat === 'all') return this.getAll();
-    return this.products.filter(p => (p.category || '').toLowerCase() === cat.toLowerCase());
+    return this.products
+      .filter(p => (p.category || '').toLowerCase() === cat.toLowerCase())
+      .map(p => ({
+        ...p,
+        colors: window.getNormalizedProductColors(p)
+      }));
   }
 
   getCategories() {
@@ -831,7 +1080,7 @@ class ProductStore {
       rating: 5.0,
       reviewsCount: 1,
       gallery: product.gallery && product.gallery.length ? product.gallery : [product.image],
-      colors: product.colors || ['Pink', 'White'],
+      colors: (product.colors && product.colors.length >= 3) ? product.colors : window.getNormalizedProductColors(product),
       customizable: true,
       inStock: true,
       ...product

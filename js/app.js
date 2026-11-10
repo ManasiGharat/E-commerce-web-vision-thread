@@ -494,6 +494,7 @@ class VisionThreadApp {
     const resolvedImg = this.resolveImageUrl(p.image);
     const isAboveFold = index < 4;
     const loadAttr = isAboveFold ? 'loading="eager" fetchpriority="high"' : 'loading="lazy" fetchpriority="auto"';
+    const productColors = window.getNormalizedProductColors ? window.getNormalizedProductColors(p) : (p.colors || []);
 
     return `
       <div class="product-card group ${!inStock ? 'opacity-90' : ''}" data-product-id="${p.id}">
@@ -535,6 +536,21 @@ class VisionThreadApp {
             <p class="text-xs text-gray-500 mt-1 line-clamp-2 leading-relaxed hidden sm:block">
               ${p.shortDescription || ''}
             </p>
+
+            <!-- Color Palette Preview Dots -->
+            ${productColors && productColors.length ? `
+              <div class="mt-2 flex items-center gap-1.5 cursor-pointer" onclick="app.openProductDetails('${p.id}')" title="${productColors.length} available colors: ${productColors.join(', ')}">
+                <span class="text-[10px] text-gray-500 font-medium">Colors:</span>
+                <div class="flex items-center -space-x-1">
+                  ${productColors.slice(0, 5).map(c => {
+                    const style = window.getColorSwatchStyle ? window.getColorSwatchStyle(c) : 'background-color: #ec4899;';
+                    const isLight = window.isLightColor ? window.isLightColor(c) : false;
+                    return `<span class="w-3.5 h-3.5 rounded-full border ${isLight ? 'border-gray-300' : 'border-white'} shadow-xs inline-block transition-transform hover:scale-125 hover:z-10" style="${style}" title="${c}"></span>`;
+                  }).join('')}
+                </div>
+                ${productColors.length > 5 ? `<span class="text-[10px] font-semibold text-pink-600">+${productColors.length - 5}</span>` : ''}
+              </div>
+            ` : ''}
           </div>
 
           <div class="mt-3 pt-2 border-t border-pink-100 flex flex-col gap-2">
@@ -601,7 +617,12 @@ class VisionThreadApp {
     const content = document.getElementById('productDetailsModalContent');
     if (!modal || !content) return;
 
-    let selectedColor = product.colors && product.colors.length ? product.colors[0] : 'Standard';
+    const colors = window.getNormalizedProductColors 
+      ? window.getNormalizedProductColors(product) 
+      : (product.colors && product.colors.length ? product.colors : ['Pink', 'White']);
+
+    let selectedColor = colors && colors.length ? colors[0] : 'Standard';
+    this.currentSelectedColor = selectedColor;
     let currentQty = 1;
 
     const rawGallery = product.gallery && product.gallery.length ? product.gallery : [product.image];
@@ -662,18 +683,49 @@ class VisionThreadApp {
               </div>
             ` : ''}
 
-            <!-- Color Options -->
-            ${product.colors && product.colors.length ? `
-              <div class="mt-4">
-                <label class="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Available Colors:</label>
-                <div class="flex flex-wrap gap-2" id="detailColorOptions">
-                  ${product.colors.map((c, i) => `
-                    <button type="button" onclick="app.selectDetailColor('${c}', this)" 
-                      class="color-chip px-3 py-1.5 text-xs rounded-full border transition-all ${i === 0 ? 'bg-pink-600 text-white border-pink-600 shadow-sm' : 'bg-white border-gray-300 text-gray-700 hover:border-pink-500'}">
-                      ${c}
-                    </button>
-                  `).join('')}
+            <!-- Available Colors Selection Section -->
+            ${colors && colors.length ? `
+              <div class="mt-4 pt-1">
+                <div class="flex items-center justify-between mb-2">
+                  <label class="block text-xs font-bold text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
+                    <span>Available Colors:</span>
+                  </label>
+                  <span id="detailSelectedColorName" class="text-xs font-semibold text-pink-700 bg-pink-50 px-2.5 py-0.5 rounded-full border border-pink-200 shadow-xs">
+                    Selected: ${selectedColor}
+                  </span>
                 </div>
+                <div class="flex flex-wrap gap-2" id="detailColorOptions" role="radiogroup" aria-label="Available Colors">
+                  ${colors.map((c, i) => {
+                    const isSelected = i === 0;
+                    const swatchStyle = window.getColorSwatchStyle ? window.getColorSwatchStyle(c) : 'background-color: #ec4899;';
+                    const isLight = window.isLightColor ? window.isLightColor(c) : false;
+                    const safeColor = String(c).replace(/"/g, '&quot;').replace(/'/g, "\\'");
+                    return `
+                      <button type="button" 
+                        onclick="app.selectDetailColor('${safeColor}', this)" 
+                        data-color="${c}"
+                        title="${c}"
+                        aria-checked="${isSelected ? 'true' : 'false'}"
+                        role="radio"
+                        class="color-chip group relative flex items-center gap-2 px-3 py-1.5 text-xs rounded-full border transition-all duration-200 cursor-pointer ${
+                          isSelected 
+                            ? 'is-selected border-pink-600 bg-pink-50/90 text-gray-900 font-semibold shadow-sm ring-2 ring-pink-500/30' 
+                            : 'bg-white border-gray-300 text-gray-700 hover:border-pink-400 hover:bg-pink-50/40'
+                        }">
+                        <span class="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center transition-transform group-hover:scale-110 shadow-xs ${isLight ? 'border border-gray-300' : ''}" style="${swatchStyle}">
+                          <svg class="color-check-icon w-2.5 h-2.5 ${isSelected ? 'block' : 'hidden'} ${isLight ? 'text-gray-900' : 'text-white'}" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                          </svg>
+                        </span>
+                        <span class="color-chip-label font-medium">${c}</span>
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+                <p class="text-[11px] text-gray-500 mt-1.5 flex items-center gap-1">
+                  <svg class="w-3 h-3 text-pink-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+                  <span>Select your preferred colour for this craft piece.</span>
+                </p>
               </div>
             ` : ''}
 
@@ -724,7 +776,7 @@ class VisionThreadApp {
             </button>
 
             <!-- Submit Custom Request -->
-            <a href="#/custom-orders" onclick="app.closeQuickViewModal()" 
+            <a href="#/custom-orders" onclick="app.closeProductModal()" 
                class="w-full py-2.5 px-4 bg-pink-50 hover:bg-pink-100 text-pink-700 border border-pink-200 rounded-full font-medium text-xs flex items-center justify-center gap-2 transition-all">
               <span>Request Customization / Bespoke Order</span>
             </a>
@@ -738,12 +790,30 @@ class VisionThreadApp {
 
   selectDetailColor(color, btn) {
     document.querySelectorAll('#detailColorOptions .color-chip').forEach(c => {
-      c.classList.remove('bg-pink-600', 'text-white', 'border-pink-600', 'shadow-sm');
+      c.classList.remove('is-selected', 'border-pink-600', 'bg-pink-50/90', 'text-gray-900', 'font-semibold', 'shadow-sm', 'ring-2', 'ring-pink-500/30');
       c.classList.add('bg-white', 'border-gray-300', 'text-gray-700');
+      c.setAttribute('aria-checked', 'false');
+      const icon = c.querySelector('.color-check-icon');
+      if (icon) {
+        icon.classList.add('hidden');
+        icon.classList.remove('block');
+      }
     });
-    btn.classList.add('bg-pink-600', 'text-white', 'border-pink-600', 'shadow-sm');
+
+    btn.classList.add('is-selected', 'border-pink-600', 'bg-pink-50/90', 'text-gray-900', 'font-semibold', 'shadow-sm', 'ring-2', 'ring-pink-500/30');
     btn.classList.remove('bg-white', 'border-gray-300', 'text-gray-700');
+    btn.setAttribute('aria-checked', 'true');
+    const activeIcon = btn.querySelector('.color-check-icon');
+    if (activeIcon) {
+      activeIcon.classList.remove('hidden');
+      activeIcon.classList.add('block');
+    }
+
     this.currentSelectedColor = color;
+    const label = document.getElementById('detailSelectedColorName');
+    if (label) {
+      label.textContent = `Selected: ${color}`;
+    }
   }
 
   changeDetailQty(delta) {
@@ -762,8 +832,11 @@ class VisionThreadApp {
     if (!this.selectedProduct) return;
     const qty = parseInt(document.getElementById('detailQtyDisplay')?.textContent) || 1;
     const note = document.getElementById('detailCustomNote')?.value || '';
-    const activeChip = document.querySelector('#detailColorOptions .color-chip.bg-pink-600');
-    const color = activeChip ? activeChip.textContent.trim() : (this.selectedProduct.colors ? this.selectedProduct.colors[0] : 'Standard');
+    const activeChip = document.querySelector('#detailColorOptions .color-chip.is-selected') || 
+                       document.querySelector('#detailColorOptions .color-chip[aria-checked="true"]');
+    const color = this.currentSelectedColor || 
+                  activeChip?.getAttribute('data-color') || 
+                  (this.selectedProduct.colors && this.selectedProduct.colors.length ? this.selectedProduct.colors[0] : 'Standard');
 
     this.addToCart(this.selectedProduct.id, qty, color, note);
     this.closeProductModal();
@@ -773,8 +846,11 @@ class VisionThreadApp {
     if (!this.selectedProduct) return;
     const qty = parseInt(document.getElementById('detailQtyDisplay')?.textContent) || 1;
     const note = document.getElementById('detailCustomNote')?.value || '';
-    const activeChip = document.querySelector('#detailColorOptions .color-chip.bg-pink-600');
-    const color = activeChip ? activeChip.textContent.trim() : (this.selectedProduct.colors ? this.selectedProduct.colors[0] : 'Standard');
+    const activeChip = document.querySelector('#detailColorOptions .color-chip.is-selected') || 
+                       document.querySelector('#detailColorOptions .color-chip[aria-checked="true"]');
+    const color = this.currentSelectedColor || 
+                  activeChip?.getAttribute('data-color') || 
+                  (this.selectedProduct.colors && this.selectedProduct.colors.length ? this.selectedProduct.colors[0] : 'Standard');
 
     this.buyNowItem = {
       product: this.selectedProduct,

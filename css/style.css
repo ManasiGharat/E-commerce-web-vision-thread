@@ -563,3 +563,27 @@ h1, h2, h3, .font-serif {
   box-shadow: 0 4px 20px rgba(236, 72, 153, 0.08);
 }
 
+/* Color Chip Selection & Swatch Styles */
+.color-chip {
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.color-chip:hover:not(.is-selected) {
+  transform: translateY(-1px);
+  border-color: #f472b6;
+  background-color: #fdf2f8;
+}
+
+.color-chip.is-selected {
+  transform: scale(1.02);
+  box-shadow: 0 2px 8px -1px rgba(236, 72, 153, 0.25), 0 0 0 2px rgba(236, 72, 153, 0.35);
+}
+
+.color-chip:active {
+  transform: scale(0.98);
+}
+
+
