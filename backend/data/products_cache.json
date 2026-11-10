@@ -381,8 +381,8 @@
     "productCode": "vt-05",
     "name": "lotus Flower",
     "category": "Handmade Flowers",
-    "price": 100,
-    "originalPrice": 120,
+    "price": 150,
+    "originalPrice": 150,
     "rating": 4.9,
     "reviewsCount": 65,
     "badge": "Affordable Gem",
@@ -402,7 +402,7 @@
     "customizable": true,
     "inStock": true,
     "createdAt": "2026-10-09T15:49:37.000Z",
-    "updatedAt": "2026-10-20T11:00:10.000Z"
+    "updatedAt": "2026-11-10T13:58:36.000Z"
   },
   {
     "id": "vt-06",
