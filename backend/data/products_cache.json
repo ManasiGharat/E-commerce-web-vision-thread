@@ -266,8 +266,8 @@
     "productCode": "vt-mvi8mc5l",
     "name": "chafa keychain",
     "category": "Keychains",
-    "price": 50,
-    "originalPrice": 80,
+    "price": 80,
+    "originalPrice": 100,
     "rating": 5,
     "reviewsCount": 0,
     "badge": null,
@@ -287,7 +287,7 @@
     "customizable": true,
     "inStock": true,
     "createdAt": "2026-10-21T14:58:52.000Z",
-    "updatedAt": "2026-10-24T14:42:56.000Z"
+    "updatedAt": "2026-11-10T13:58:10.000Z"
   },
   {
     "id": "vt-mvi7oc0n",
